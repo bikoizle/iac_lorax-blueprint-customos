@@ -1,0 +1,19 @@
+name = "customos"
+description = "customos"
+groups = []
+
+[[packages]]
+name = "openssh-server"
+version = "*"
+
+[[packages]]
+name = "ansible"
+version = "*"
+
+[[packages]]
+name = "git"
+version = "*"
+
+[[customizations.user]]
+name = "root"
+password = "insecure"
