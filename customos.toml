@@ -1,0 +1,14 @@
+name = "customos"
+description = "customos"
+groups = []
+
+[[packages]]
+name = "openssh-server"
+version = "*"
+
+[[customizations.user]]
+name = "customos"
+password = "insecure"
+groups = ["users", "wheel"]
+uid = 3000
+gid = 3000
