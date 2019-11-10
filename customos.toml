@@ -6,14 +6,9 @@ groups = []
 name = "openssh-server"
 version = "*"
 
-[[packages]]
-name = "ansible"
-version = "*"
-
-[[packages]]
-name = "git"
-version = "*"
-
 [[customizations.user]]
-name = "root"
+name = "customos"
 password = "insecure"
+groups = ["users", "wheel"]
+uid = 3000
+gid = 3000
