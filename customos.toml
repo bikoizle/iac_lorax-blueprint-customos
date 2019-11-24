@@ -12,3 +12,7 @@ password = "insecure"
 groups = ["users", "wheel"]
 uid = 3000
 gid = 3000
+
+[[customizations.sshkey]]
+user = "root"
+key = "ROOT_KEY"
