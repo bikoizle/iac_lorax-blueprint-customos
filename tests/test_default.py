@@ -37,6 +37,3 @@ def test_clamav_services_are_active_and_enabled(host,service):
 def test_zabbix_service_is_active_and_enabled(host):
     assert host.service("zabbix-agent").is_running
     assert host.service("zabbix-agent").is_enabled
-
-def test_zabbix_client_is_listening(host):
-    host.socket("tcp://0.0.0.0:10050").is_listening
