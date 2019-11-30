@@ -22,6 +22,10 @@ def test_sshd_service_is_active_and_enabled(host):
     assert host.service("sshd").is_running
     assert host.service("sshd").is_enabled
 
+def test_firewalld_service_is_stopped_and_disabled(host):
+    assert host.service("firewalld").is_running is False
+    assert host.service("firewalld").is_enabled is False
+
 @pytest.mark.parametrize("service", [
     "clam-freshclam",
     "clamd@scan",
