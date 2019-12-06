@@ -57,24 +57,6 @@ gid = 3000
 user = "root"
 key = "ROOT_KEY"
 
-[[repos.git]]
-rpmname="customos-zabbix-config"
-rpmversion="0.1.0"
-rpmrelease="1"
-summary="Zabbix agent configuration files for CustomOS"
-repo="https://github.com/bikoizle/iac_config-zabbix.git"
-ref="0.1.0"
-destination="/"
-
-[[repos.git]]
-rpmname="customos-clamav-config"
-rpmversion="0.1.0"
-rpmrelease="1"
-summary="Zabbix agent configuration files for CustomOS"
-repo="https://github.com/bikoizle/iac_config-clamav.git"
-ref="0.1.0"
-destination="/"
-
 [customizations.services]
-enabled = ["sshd", "zabbix-agent", "clamd@scan", "clam-freshclam"]
-disabled = ["firewalld"]
+enabled = ["sshd", "firewalld"]
+disabled = ["zabbix-agent", "clamd@scan"]

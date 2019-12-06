@@ -22,18 +22,18 @@ def test_sshd_service_is_active_and_enabled(host):
     assert host.service("sshd").is_running
     assert host.service("sshd").is_enabled
 
-def test_firewalld_service_is_stopped_and_disabled(host):
-    assert host.service("firewalld").is_running is False
-    assert host.service("firewalld").is_enabled is False
+def test_firewalld_service_is_active_and_enabled(host):
+    assert host.service("firewalld").is_running
+    assert host.service("firewalld").is_enabled
 
 @pytest.mark.parametrize("service", [
     "clam-freshclam",
     "clamd@scan",
 ])
-def test_clamav_services_are_active_and_enabled(host,service):
-    assert host.service(service).is_running
-    assert host.service(service).is_enabled
+def test_clamav_services_are_stopped_and_disabled(host,service):
+    assert host.service(service).is_running is False
+    assert host.service(service).is_enabled is False
 
-def test_zabbix_service_is_active_and_enabled(host):
-    assert host.service("zabbix-agent").is_running
-    assert host.service("zabbix-agent").is_enabled
+def test_zabbix_service_is_stopped_and_disabled(host):
+    assert host.service("zabbix-agent").is_running is False
+    assert host.service("zabbix-agent").is_enabled is False
