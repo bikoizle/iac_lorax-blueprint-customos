@@ -1,5 +1,4 @@
 import pytest
-import testinfra
 
 
 def test_os_release_file(host):
