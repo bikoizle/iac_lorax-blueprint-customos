@@ -3,6 +3,14 @@ description = "customos"
 groups = []
 
 [[packages]]
+name = "cloud-init"
+version = "*"
+
+[[packages]]
+name = "cloud-utils-growpart"
+version = "*"
+
+[[packages]]
 name = "openssh-server"
 version = "*"
 
