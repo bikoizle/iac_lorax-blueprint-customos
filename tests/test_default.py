@@ -34,6 +34,8 @@ def test_customos_user_exists(host):
     "clamav-devel",
     "clamav-lib",
     "clamav-server-systemd",
+    "cloud-init",
+    "cloud-utils-growpart",
 ])
 def test_agent_packages_are_installed(host, package):
     host.package(package).is_installed
@@ -48,6 +50,9 @@ def test_firewalld_service_is_active_and_enabled(host):
     assert host.service("firewalld").is_running
     assert host.service("firewalld").is_enabled
 
+def test_cloud_init_service_is_active_and_enabled(host):
+    assert host.service("cloud-init").is_running
+    assert host.service("cloud-init").is_enabled
 
 @pytest.mark.parametrize("service", [
     "clam-freshclam",

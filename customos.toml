@@ -66,5 +66,5 @@ user = "root"
 key = "ROOT_KEY"
 
 [customizations.services]
-enabled = ["sshd", "firewalld"]
+enabled = ["sshd", "firewalld, "cloud-init"]
 disabled = ["zabbix-agent", "clamd@scan"]
