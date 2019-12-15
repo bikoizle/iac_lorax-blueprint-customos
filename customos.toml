@@ -3,7 +3,55 @@ description = "customos"
 groups = []
 
 [[packages]]
+name = "cloud-init"
+version = "*"
+
+[[packages]]
+name = "cloud-utils-growpart"
+version = "*"
+
+[[packages]]
 name = "openssh-server"
+version = "*"
+
+[[packages]]
+name = "zabbix-agent"
+version = "*"
+
+[[packages]]
+name = "clamav-server"
+version = "*"
+
+[[packages]]
+name = "clamav-data"
+version = "*"
+
+[[packages]]
+name = "clamav-update"
+version = "*"
+
+[[packages]]
+name = "clamav-filesystem"
+version = "*"
+
+[[packages]]
+name = "clamav"
+version = "*"
+
+[[packages]]
+name = "clamav-scanner-systemd"
+version = "*"
+
+[[packages]]
+name = "clamav-devel"
+version = "*"
+
+[[packages]]
+name = "clamav-lib"
+version = "*"
+
+[[packages]]
+name = "clamav-server-systemd"
 version = "*"
 
 [[customizations.user]]
@@ -12,3 +60,11 @@ password = "insecure"
 groups = ["users", "wheel"]
 uid = 3000
 gid = 3000
+
+[[customizations.sshkey]]
+user = "root"
+key = "ROOT_KEY"
+
+[customizations.services]
+enabled = ["sshd", "firewalld", "cloud-init"]
+disabled = ["zabbix-agent", "clamd@scan"]
